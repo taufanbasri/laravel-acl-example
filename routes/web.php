@@ -24,3 +24,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('users', 'UserController');
     Route::resource('products', 'ProductController');
 });
+
+Route::get('my-captcha', 'UsingCaptchaController@myCaptcha')->name('myCaptcha');
+Route::post('my-captcha', 'UsingCaptchaController@myCaptchaPost')->name('myCaptcha.post');
+Route::get('refresh-captcha', 'UsingCaptchaController@refreshCaptcha')->name('refresh.Captcha');
